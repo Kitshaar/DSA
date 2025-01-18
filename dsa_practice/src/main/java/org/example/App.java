@@ -27,6 +27,14 @@ public class App
             else
                 stack.push(s);
         }
+        System.out.println();
+        for (String s : todo)
+        {
+            if (s.equals("- "))
+                System.out.print(fixedStack.pop());
+            else
+                fixedStack.push(s);
+        }
 
     }
 }
