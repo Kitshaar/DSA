@@ -39,5 +39,6 @@ public class StackQueueTestApi
         for (String s : stack) {
             System.out.print(s);
         }
+
     }
 }
