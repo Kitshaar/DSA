@@ -1,38 +1,44 @@
 package org.example;
 
-import junit.framework.Test;
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
+
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
+public class AppTest
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
+    public static void main( String[] args )
     {
-        return new TestSuite( AppTest.class );
-    }
+        //QueueOfLinkedList<String> queue = new QueueOfLinkedList<>();
+        Test_StackOfArray<String> stack = new Test_StackOfArray<>();
+        // Creating a test case for the StackOfStings implementations
+        // Chose to use Collection api to store values instead to getting values from the console or
+        // a file
+        List<String> todo = Arrays.asList("to ", "be ", "or ", "not ", "to ",
+                "- ", "be ", "- ", "- ", "that ", "- ", "- ", "- ", "is ");
+        for (String s : todo)
+        {
+            if (s.equals("- "))
+                 ;
+//                ;
+            else {
+//                queue.enqueue(s);
+                stack.push(s);
+            }
+        }
+//        for (String s : queue)
+//            System.out.print(s);
+//
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+        System.out.println();
+//
+        for (String s : stack) {
+            System.out.print(s);
+        }
     }
 }
