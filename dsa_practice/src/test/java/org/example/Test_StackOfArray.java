@@ -17,28 +17,28 @@ public class Test_StackOfArray<Item> implements Iterable<Item> {
         return N == 0;
     }
 
-    public void push(Item item)
-    {
-        if (N == stack.length)
+    public void push(Item item) {
+        if (stack.length == N)
             resize(stack.length * 2);
         stack[N++] = item;
     }
 
     public Item pop()
     {
-        Item item = stack[--N];
-        stack[N] = null;
-        if (N > 0 && N == stack.length/4)
-            resize(stack.length/2);
-        return item;
+       Item item = stack[--N];
+       stack[N] = null;
+       if (N > 10 && N == stack.length/4 )
+           resize(stack.length/2);
+
+       return item;
     }
 
     private void resize(int i) {
-        Item[] newStack = (Item[]) new Object[i];
+        Item[] copy = (Item[]) new Object[i];
         for (int j = 0; j < stack.length; j++) {
-            newStack[j] = stack[j];
+            copy[j] = stack[j];
         }
-        stack = newStack;
+        stack = copy;
     }
 
     @Override

@@ -20,14 +20,14 @@ public class Test_QueueOfLinkedList<Item> implements Iterable<Item>{
 
     public void enqueue(Item item)
     {
-       Node oldLast = last;
-       last = new Node();
-       last.item = item;
-       last.next = null;
-       if (isEmpty())
-           first = last;
-       else
-           oldLast.next = last;
+      Node oldLast = last;
+      last = new Node();
+      last.item = item;
+      last.next = null;
+      if (isEmpty())
+          first = last;
+      else
+          oldLast.next = last;
     }
 
     public Item dequeue()
@@ -42,7 +42,7 @@ public class Test_QueueOfLinkedList<Item> implements Iterable<Item>{
 
     @Override
     public Iterator<Item> iterator() {
-        return null;
+        return new QueueIterator();
     }
 
     private class QueueIterator implements Iterator<Item>

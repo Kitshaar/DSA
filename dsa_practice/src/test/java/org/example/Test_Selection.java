@@ -9,15 +9,15 @@ public class Test_Selection{
     public static <T extends Comparable<T>> void sort(T[]a)
     {
         for (int i = 0; i < a.length; i++) {
-           int min = i;
+            int min = i;
             for (int j = i + 1; j < a.length; j++) {
-                if (less(j , i))
+                if (less(a[j], a[min]))
+                {
                     min = j;
+                }
             }
-            exch(a , i, min);
-
+            exch(a, i, min);
         }
-
     }
 
     public static <T extends Comparable<T>> void exch(T[] a , int i, int j)

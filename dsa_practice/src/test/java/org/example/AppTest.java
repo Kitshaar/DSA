@@ -15,8 +15,8 @@ public class AppTest
     public static void main( String[] args )
     {
         //QueueOfLinkedList<String> queue = new QueueOfLinkedList<>();
-//        Test_StackOfArray<String> stack = new Test_StackOfArray<>();
-        StackOfLinkedList_Test<String> stack = new StackOfLinkedList_Test<>();
+        Test_StackOfArray<String> stack = new Test_StackOfArray<>();
+        //StackOfLinkedList_Test<String> stack = new StackOfLinkedList_Test<>();
         // Creating a test case for the StackOfStings implementations
         // Chose to use Collection api to store values instead to getting values from the console or
         // a file
