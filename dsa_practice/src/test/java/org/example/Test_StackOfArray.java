@@ -14,13 +14,13 @@ public class Test_StackOfArray<Item> implements Iterable<Item> {
 
     public boolean isEmpty()
     {
-        return stack[0] == null;
+        return N == 0;
     }
 
     public void push(Item item)
     {
-        if (stack.length == N)
-            resize( stack.length * 2);
+        if (N == stack.length)
+            resize(stack.length * 2);
         stack[N++] = item;
     }
 
@@ -28,17 +28,15 @@ public class Test_StackOfArray<Item> implements Iterable<Item> {
     {
         Item item = stack[--N];
         stack[N] = null;
-        if (N > 0 && stack.length == N/4)
-            resize((stack.length/2));
+        if (N > 0 && N == stack.length/4)
+            resize(stack.length/2);
         return item;
     }
 
-    private void resize(int newCapacity)
-    {
-        Item[] newStack = (Item[]) new Object[newCapacity];
-        for (int i = 0; i < stack.length; i++)
-        {
-            newStack[i] = stack[i];
+    private void resize(int i) {
+        Item[] newStack = (Item[]) new Object[i];
+        for (int j = 0; j < stack.length; j++) {
+            newStack[j] = stack[j];
         }
         stack = newStack;
     }
@@ -50,7 +48,8 @@ public class Test_StackOfArray<Item> implements Iterable<Item> {
 
     private class ArrayStackIterator implements Iterator<Item>
     {
-        private int i = N;
+
+         int i = N;
         @Override
         public boolean hasNext() {
             return i > 0;
@@ -63,7 +62,7 @@ public class Test_StackOfArray<Item> implements Iterable<Item> {
 
         @Override
         public void remove() {
-            throw new UnsupportedOperationException("This operation is not supported.");
+            throw new UnsupportedOperationException("Not allowed");
         }
     }
 }
