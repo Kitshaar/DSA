@@ -14,32 +14,10 @@ public class AppTest
 
     public static void main( String[] args )
     {
-        //QueueOfLinkedList<String> queue = new QueueOfLinkedList<>();
-        Test_StackOfArray<String> stack = new Test_StackOfArray<>();
-        //StackOfLinkedList_Test<String> stack = new StackOfLinkedList_Test<>();
-        // Creating a test case for the StackOfStings implementations
-        // Chose to use Collection api to store values instead to getting values from the console or
-        // a file
-        List<String> todo = Arrays.asList("to ", "be ", "or ", "not ", "to ",
-                "- ", "be ", "- ", "- ", "that ", "- ", "- ", "- ", "is ");
-        for (String s : todo)
-        {
-            if (s.equals("- "))
-                 ;
-//                ;
-            else {
-//                queue.enqueue(s);
-                stack.push(s);
-            }
-        }
-//        for (String s : queue)
-//            System.out.print(s);
-//
+        Integer[] a = new Integer[]{4,2,1,3,5};
+        Test_Insertion.sort(a);
+        for (int value : a)
+          System.out.println(value);
 
-        System.out.println();
-//
-        for (String s : stack) {
-            System.out.print(s);
-        }
     }
 }
